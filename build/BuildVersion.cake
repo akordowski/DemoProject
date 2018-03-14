@@ -18,31 +18,39 @@ public class BuildVersion
         string semVersion = null;
         string version = null;
 
-        if (context.IsRunningOnWindows())
+        if (context.IsRunningOnWindows()) // && !parameters.SkipGitVersion
         {
-            if (!buildSystem.IsLocalBuild)
+            context.Information("Calculating Semantic Version");
+
+            if (!buildSystem.IsLocalBuild) // || parameters.IsPublishBuild || parameters.IsReleaseBuild
             {
                 context.GitVersion(new GitVersionSettings
                 {
+                    //UpdateAssemblyInfoFilePath = "./src/SolutionInfo.cs",
                     UpdateAssemblyInfo = true,
                     OutputType = GitVersionOutput.BuildServer
                 });
-
-                version = context.EnvironmentVariable("GitVersion_MajorMinorPatch");
-                semVersion = context.EnvironmentVariable("GitVersion_LegacySemVerPadded");
             }
-            else
+
+            GitVersion gitVersion = context.GitVersion(new GitVersionSettings
             {
-                GitVersion gitVersion = context.GitVersion(new GitVersionSettings
-                {
-                    OutputType = GitVersionOutput.Json
-                });
+                OutputType = GitVersionOutput.Json
+            });
 
-                version = gitVersion.MajorMinorPatch;
-                semVersion = gitVersion.LegacySemVerPadded;
-            }
-
+            version = gitVersion.MajorMinorPatch;
+            semVersion = gitVersion.LegacySemVerPadded;
             milestone = string.Concat("v", version);
+
+            context.Information($"Calculated Semantic Version: {semVersion}");
+
+            if (string.IsNullOrEmpty(version) || string.IsNullOrEmpty(semVersion))
+            {
+                context.Information("Fetching version from first SolutionInfo");
+
+                version = ReadSolutionInfoVersion(context);
+                semVersion = version;
+                milestone = string.Concat("v", version);
+            }
         }
 
         return new BuildVersion
@@ -52,5 +60,19 @@ public class BuildVersion
             SemVersion = semVersion,
             Version = version,
         };
+    }
+
+    public static string ReadSolutionInfoVersion(ICakeContext context)
+    {
+        // var solutionInfo = context.ParseAssemblyInfo("./src/SolutionInfo.cs");
+
+        // if (!string.IsNullOrEmpty(solutionInfo.AssemblyVersion))
+        // {
+        //     return solutionInfo.AssemblyVersion;
+        // }
+
+        // throw new CakeException("Could not parse version.");
+
+        return "";
     }
 }
