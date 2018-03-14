@@ -1,9 +1,20 @@
-var target = Argument("target", "Default");
-var configuration = Argument("configuration", "Release");
+#load "./build/BuildParameters.cake"
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* Arguments */
+
+var parameters = BuildParameters.GetInstance(Context);
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* Tasks Targets */
 
 Task("Default")
     .Does(() =>
     {
+        parameters.ShowInfo();
     });
 
-RunTarget(target);
+/* ---------------------------------------------------------------------------------------------------- */
+/* Execution */
+
+RunTarget(parameters.Target);
