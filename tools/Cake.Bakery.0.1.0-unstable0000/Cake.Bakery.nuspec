@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>Cake.Bakery</id>
+    <version>0.1.0-unstable0000</version>
+    <authors>Artur Kordowski</authors>
+    <owners>Artur Kordowski</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/akordowski/Cake.Bakery/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/akordowski/Cake.Bakery</projectUrl>
+    <iconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
+    <description>Re-usable build scripts for Cake.</description>
+    <copyright>Copyright (c) 2018 Artur Kordowski</copyright>
+    <tags>cake build scripts</tags>
+  </metadata>
+</package>
