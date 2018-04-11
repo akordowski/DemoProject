@@ -1,20 +1,8 @@
-#load "./build/BuildParameters.cake"
+#load nuget:https://www.myget.org/F/arkord/api/v2?package=Cake.Bakery&prerelease
 
-/* ---------------------------------------------------------------------------------------------------- */
-/* Arguments */
+Build.Solution.Config(
+    "DemoProject",
+    "./src/DemoProject.sln"
+    );
 
-var parameters = BuildParameters.GetInstance(Context);
-
-/* ---------------------------------------------------------------------------------------------------- */
-/* Tasks Targets */
-
-Task("Default")
-    .Does(() =>
-    {
-        parameters.ShowInfo();
-    });
-
-/* ---------------------------------------------------------------------------------------------------- */
-/* Execution */
-
-RunTarget(parameters.Target);
+Build.Run();

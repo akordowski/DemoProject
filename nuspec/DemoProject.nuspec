@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>DemoProject</id>
+    <title>DemoProject</title>
+    <authors>Artur Kordowski</authors>
+    <owners>Artur Kordowski</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/akordowski/DemoProject/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/akordowski/DemoProject</projectUrl>
+    <description>Description</description>
+    <summary>Summary</summary>
+    <copyright>Copyright (c) 2018 Artur Kordowski</copyright>
+    <tags>demo project</tags>
+  </metadata>
+  <files>
+    <file src="DemoProject.*" target="lib" />
+  </files>
+</package>
