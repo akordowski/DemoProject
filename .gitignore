@@ -242,7 +242,7 @@ _Pvt_Extensions
 # Cake
 **/tools/*
 !**/tools/packages.config
-!**/tools/Cake.Bakery*
+untitled.txt
 
 # Build
 **/artifacts/

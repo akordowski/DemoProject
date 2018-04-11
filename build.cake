@@ -5,4 +5,8 @@ Build.Solution.Config(
     "./src/DemoProject.sln"
     );
 
+Build.Parameters.RepositoryOwner = "akordowski";
+Build.Parameters.RepositoryName = "DemoProject";
+Build.Parameters.RepositoryBranch = "master";
+
 Build.Run();
