@@ -1,12 +1,12 @@
 #load nuget:https://www.myget.org/F/arkord/api/v2?package=Cake.Bakery&prerelease
 
-Build.Solution.Config(
-    "DemoProject",
-    "./src/DemoProject.sln"
-    );
+Build.Parameters.SolutionFile = "./src/DemoProject.sln";
 
-Build.Parameters.RepositoryOwner = "akordowski";
-Build.Parameters.RepositoryName = "DemoProject";
-Build.Parameters.RepositoryBranch = "master";
+Build.Parameters.SetParameters(
+    "DemoProject",
+    "akordowski",
+    "DemoProject",
+    "master"
+    );
 
 Build.Run();
