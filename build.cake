@@ -4,9 +4,18 @@ Build
     .SetParameters(
         "DemoProject",
         "akordowski",
-        "DemoProject",
-        "master",
+        isPrerelease: true,
+
         shouldCreateCoverageReport: false,
-        shouldPublishToMyGet: null
+        shouldPostToTwitter: true,
+        shouldPublishToGitHub: true,
+        shouldPublishToMyGet: true,
+        shouldPublishToNuGet: true,
+        shouldRunGitVersion: true,
+
+        printEnvironmentInfo: false,
+        printDirectoriesInfo: false,
+        printFilesInfo: false,
+        printToolSettingsInfo: false
         )
     .Run();
