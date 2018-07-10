@@ -6,6 +6,8 @@ Build
         "akordowski",
         //printAllInfo: false,
         shouldPublish: false,
-        shouldPost: true
+        shouldPost: false
         )
     .Run();
+
+Information(BuildSystem.AppVeyor.Environment.Repository.Name);

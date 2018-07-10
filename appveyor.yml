@@ -4,7 +4,7 @@ init:
 
 # Build script
 build_script:
-  - ps: .\build.ps1 -settings_skipverification=true -target AppVeyor
+  - ps: .\build.ps1 -settings_skipverification=true -target ShowInfo
 
 # Tests
 test: off
