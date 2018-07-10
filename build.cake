@@ -10,10 +10,13 @@ Build
         )
     .Run();
 
-var repo = "akordowski/DemoProject";
-var repoName = BuildSystem.AppVeyor.Environment.Repository.Name;
-var isEqual = repoName.Equals(repo, StringComparison.OrdinalIgnoreCase);
 
-Information("repo: " + repo);
-Information("repoName: " + repoName);
-Information("isEqual: " + isEqual);
+var RepositoryOwner = "akordowski";
+var RepositoryName = "DemoProject";
+var Repository = $"{repositoryOwner}/{repositoryName}";
+var IsMainRepository = repo.Name.Equals(Repository, StringComparison.OrdinalIgnoreCase);
+
+Information("RepositoryOwner: " + RepositoryOwner);
+Information("RepositoryName: " + RepositoryName);
+Information("Repository: " + Repository);
+Information("IsMainRepository: " + IsMainRepository);
