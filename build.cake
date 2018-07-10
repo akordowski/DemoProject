@@ -10,4 +10,10 @@ Build
         )
     .Run();
 
-Information(BuildSystem.AppVeyor.Environment.Repository.Name);
+var repo = "akordowski/DemoProject";
+var repoName = BuildSystem.AppVeyor.Environment.Repository.Name;
+var isEqual = repoName.Equals(repo, StringComparison.OrdinalIgnoreCase);
+
+Information("repo: " + repo);
+Information("repoName: " + repoName);
+Information("isEqual: " + isEqual);
