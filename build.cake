@@ -13,10 +13,10 @@ Build
 
 var RepositoryOwner = "akordowski";
 var RepositoryName = "DemoProject";
-var Repository = $"{repositoryOwner}/{repositoryName}";
+var RepositoryFullName = $"{RepositoryOwner}/{RepositoryName}";
 var IsMainRepository = repo.Name.Equals(Repository, StringComparison.OrdinalIgnoreCase);
 
 Information("RepositoryOwner: " + RepositoryOwner);
 Information("RepositoryName: " + RepositoryName);
-Information("Repository: " + Repository);
+Information("RepositoryFullName: " + RepositoryFullName);
 Information("IsMainRepository: " + IsMainRepository);
