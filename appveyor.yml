@@ -4,7 +4,7 @@ init:
 
 # Build script
 build_script:
-  - ps: .\build.ps1 -settings_skipverification=true -verbosity diagnostic
+  - ps: .\build.ps1 -settings_skipverification=true -target AppVeyor
 
 # Tests
 test: off

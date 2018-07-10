@@ -4,7 +4,7 @@ Build
     .SetParameters(
         "DemoProject",
         "akordowski",
-        printAllInfo: false,
+        //printAllInfo: false,
         shouldPublish: false,
         shouldPost: true
         )
